@@ -29,22 +29,24 @@ OBSERVATION_LIMIT = 500
 # as the URL is always created this way.)
 # 
 # '$orderby' usage: http://docs.opengeospatial.org/is/15-078r6/15-078r6.html#50
-moreResults = True
+more_results = True
+download_url = f'{DATASTREAM_URL}/Observations'
 observations = []
 
-while(moreResults and len(observations) < OBSERVATION_LIMIT):
+while(more_results and len(observations) < OBSERVATION_LIMIT):
 	response = requests.get(
-		f'{DATASTREAM_URL}/Observations',
+		download_url,
 		params=[('$orderby', 'phenomenonTime asc')]
 	)
 	observation_entities = response.json()
 	entities = observation_entities["value"]
-	print(f'Downloaded {len(entities)} entities')
+	print(f'Downloaded {len(entities)} entities: {download_url}')
 	observations = observations + entities
 
 	# If the '@iot.nextLink' key is in the response, there is more data
 	# on the server. Otherwise, we are at the end of the collection.
-	moreResults = ('@iot.nextLink' in observation_entities)
+	more_results = ('@iot.nextLink' in observation_entities)
+	download_url = observation_entities['@iot.nextLink']
 
 print(f'Downloaded {len(observations)} Observations in total.')
 
