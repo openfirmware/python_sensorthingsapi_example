@@ -8,6 +8,8 @@ Note that these examples are using the secondary URL for the Arctic Connect Sens
 
 I tested this with Python 3.6.6 on MacOS 10.13.
 
+ArcticConnect is using [FROST Server](https://github.com/FraunhoferIOSB/FROST-Server) for serving OGC SensorThings API. The code may work when pointed to another OGC SensorThings API service, with slightly different results.
+
 ## Examples
 
 For retrieving a list of sensor stations and their locations for mapping, try these:
@@ -26,8 +28,8 @@ Sometimes you know when a Datastream of data has already been created in STA, an
 If you have a geographic region of interest (bounding box or polygon), you can do some filtering based on that.
 
 * Use a bounding box for finding stations
-* Use a polygon to filter 
-
+* Use a polygon to filter all Datastreams for "Air Temperature" in a desired region
+* For a moving sensor, get only observations that occurred in a polygon
 
 ## License
 
