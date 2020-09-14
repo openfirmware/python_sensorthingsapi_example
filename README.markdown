@@ -19,7 +19,7 @@ For retrieving a list of sensor stations and their locations for mapping, try th
 
 Sometimes you know when a Datastream of data has already been created in STA, and you need the simplest way to retrieve the observation data.
 
-* Retrieve the Observation data for Datastream time series
+* [Retrieve the Observation data for Datastream time series](03_basic_data_query.py)
     * Includes handling paging, sorting
 * Filter the Observation data by time interval
 * Include the "Feature of Interest" entity for moving Observation data

@@ -17,6 +17,8 @@ STA_URL = "https://arctic-sta.gswlab.ca/FROST-Server/v1.0"
 # 
 # This uses '$expand' to embed a sub-collection into the JSON response.
 # In later examples, this will be shown in nested usage.
+# 
+# '$expand' usage: http://docs.opengeospatial.org/is/15-078r6/15-078r6.html#47
 response = requests.get(
 	f'{STA_URL}/Things',
 	params=[('$expand', 'Locations')]
