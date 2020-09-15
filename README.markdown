@@ -21,7 +21,7 @@ Sometimes you know when a Datastream of data has already been created in STA, an
 
 * [Retrieve the Observation data for Datastream time series](03_basic_data_query.py)
     * Includes handling paging, sorting
-* Filter the Observation data by time interval
+* [Filter the Observation data by time interval](04_observations_filter.py)
 * Include the "Feature of Interest" entity for moving Observation data
 * Use the "select" query to minimize the response body size
 
