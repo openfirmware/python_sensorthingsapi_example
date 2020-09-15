@@ -22,10 +22,11 @@ For retrieving a list of sensor stations and their locations for mapping, try th
 Sometimes you know when a Datastream of data has already been created in STA, and you need the simplest way to retrieve the observation data.
 
 * [Retrieve the Observation data for Datastream time series](03_basic_data_query.py)
-    * Includes handling paging, sorting
+    - Includes handling paging, sorting
 * [Filter the Observation data by time interval](04_observations_filter.py)
 * [Include the "Feature of Interest" entity for moving Observation data](05_moving_features.py)
-* Use the "select" query to minimize the response body size
+* [Use the "select" query to minimize the response body size](06_minimize_bandwidth.py)
+    - Compare `250 KB` vs `42 KB` vs `18 KB` in different methods
 
 If you have a geographic region of interest (bounding box or polygon), you can do some filtering based on that.
 
