@@ -31,7 +31,7 @@ Sometimes you know when a Datastream of data has already been created in STA, an
 If you have a geographic region of interest (bounding box or polygon), you can do some filtering based on that.
 
 * [Use a bounding box for finding stations](07_stations_bounds.py)
-* Use a polygon to filter all Datastreams for "Air Temperature" in a desired region
+* [Use a polygon to filter all Datastreams for "Air Temperature" in a desired region](08_phenomena_search.py)
 * For a moving sensor, get only observations that occurred in a polygon
 
 ## License
