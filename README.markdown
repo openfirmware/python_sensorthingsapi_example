@@ -4,6 +4,8 @@ Some examples of using the HTTP REST API for OGC SensorThings API to query data.
 
 Note that these examples are using the secondary URL for the Arctic Connect SensorThings API Service. A new URL will become the main URL in late 2020.
 
+Disclaimer: I do not know Python; hopefully the REST API usage instructions come through the examples.
+
 ## Requirements
 
 I tested this with Python 3.6.6 on MacOS 10.13.
