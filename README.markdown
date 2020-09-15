@@ -22,7 +22,7 @@ Sometimes you know when a Datastream of data has already been created in STA, an
 * [Retrieve the Observation data for Datastream time series](03_basic_data_query.py)
     * Includes handling paging, sorting
 * [Filter the Observation data by time interval](04_observations_filter.py)
-* Include the "Feature of Interest" entity for moving Observation data
+* [Include the "Feature of Interest" entity for moving Observation data](05_moving_features.py)
 * Use the "select" query to minimize the response body size
 
 If you have a geographic region of interest (bounding box or polygon), you can do some filtering based on that.
