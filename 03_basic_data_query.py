@@ -6,6 +6,7 @@
 # Datastream, using recursive paging.
 import requests
 import json
+import math
 
 # Direct link to Datastream entity.
 # 
@@ -32,12 +33,14 @@ OBSERVATION_LIMIT = 500
 more_results = True
 download_url = f'{DATASTREAM_URL}/Observations'
 observations = []
+total_downloaded_bytes = 0
 
 while(more_results and len(observations) < OBSERVATION_LIMIT):
 	response = requests.get(
 		download_url,
 		params=[('$orderby', 'phenomenonTime asc')]
 	)
+	total_downloaded_bytes += len(response.content)
 	observation_entities = response.json()
 	entities = observation_entities["value"]
 	print(f'Downloaded {len(entities)} entities: {download_url}')
@@ -48,7 +51,7 @@ while(more_results and len(observations) < OBSERVATION_LIMIT):
 	more_results = ('@iot.nextLink' in observation_entities)
 	download_url = observation_entities['@iot.nextLink']
 
-print(f'Downloaded {len(observations)} Observations in total.')
+print(f'Downloaded {len(observations)} Observations in total, {math.ceil(total_downloaded_bytes / 1000)} kilobytes.')
 
 # Next the list of Observations will be converted into a simple list of 
 # lists. e.g.
@@ -86,4 +89,3 @@ data = list(map(lambda observation: (observation['phenomenonTime'], observation[
 # cannot always expect unique Observations.
 # 
 # TODO: Make this list of data unique on phenomenonTime
-print(data)
