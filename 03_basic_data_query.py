@@ -57,7 +57,14 @@ print(f'Downloaded {len(observations)} Observations in total.')
 # 
 # "Observation" usage: http://docs.opengeospatial.org/is/15-078r6/15-078r6.html#31
 # 
-# The "phenomenonTime" may be replaced with "resultTime", as some 
+# The data type of the result here is specified by the "observationType"
+# attribute on the Datastream entity. In this case, it is
+# "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"
+# which means the result should be compatible with the "Double" data
+# type.
+# 
+# Other types can be Boolean, Integer, or "anything":
+# http://docs.opengeospatial.org/is/15-078r6/15-078r6.html#table_12
 data = list(map(lambda observation: (observation['phenomenonTime'], observation['result']), observations))
 
 # Important: We sorted by ascending "phenomenonTime" on the server as
