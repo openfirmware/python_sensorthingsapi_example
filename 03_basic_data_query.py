@@ -70,6 +70,18 @@ print(f'Downloaded {len(observations)} Observations in total, {math.ceil(total_d
 # http://docs.opengeospatial.org/is/15-078r6/15-078r6.html#table_12
 data = list(map(lambda observation: (observation['phenomenonTime'], observation['result']), observations))
 
+# Display sample Observations returned by the query
+# This print the top n_th elements (maxcount) of the tuple list as an example
+counter = 1
+maxcount = 3
+
+print(f'List the first {maxcount} Observations elements obtained from the query.')
+for x in data:
+	print(x[0], x[1])
+	counter = counter + 1
+	if counter > maxcount:
+		break
+
 # Important: We sorted by ascending "phenomenonTime" on the server as
 # by default they would be sorted by database ID, which may not
 # represent Observations in chronological order (e.g. backfilling older
